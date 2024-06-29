@@ -4,5 +4,4 @@
 
 scriptName=conserveOffOnWeekend.sh
 chmod +x $scriptName
-echo "@reboot $(pwd)/$scriptName"
-# echo "@reboot $(pwd)/$scriptName" >> /etc/crontab
+echo "@reboot $(pwd)/$scriptName" >> /etc/crontab
