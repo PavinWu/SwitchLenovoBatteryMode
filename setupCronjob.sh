@@ -2,6 +2,15 @@
 
 # Note: This script requires root permission to run.
 
+scriptPath=$(dirname $(realpath -s $0))
 scriptName=conserveOffOnWeekend.sh
-chmod +x $scriptName
-echo "@reboot $(pwd)/$scriptName" >> /etc/crontab
+fullscriptPath=$scriptPath/$scriptName
+
+newScriptName=0conserveOffOnWeekend
+fullNewScriptPath=$scriptPath/$newScriptName
+
+escapedScriptPath="${scriptPath//\//\\/}"
+sed "s/PATH_TO_REPLACE/$escapedScriptPath/" $fullscriptPath > $fullNewScriptPath
+chmod +x $fullNewScriptPath
+
+mv $fullNewScriptPath /etc/cron.daily/
