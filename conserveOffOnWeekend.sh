@@ -8,7 +8,7 @@ chmod +x $fullSwitchScriptPath
 day=$(date +'%w')
 
 # Turn off conservation mode on Fri, Sat or Sun day
-if [[ $day -eq 6 ]] || [[ $v -eq 5 ]] || [[ $v -eq 0 ]]; then
+if [[ $day -eq 6 ]] || [[ $day -eq 5 ]] || [[ $day -eq 0 ]]; then
     $fullSwitchScriptPath 0
 else
     $fullSwitchScriptPath 1
